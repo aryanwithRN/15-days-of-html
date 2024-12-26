@@ -1,0 +1,36 @@
+<!-- create a html webpage to take temp. as input either in f, c, k
+f= c-k
+c = f - k
+k = c - f -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="Day 8.1.css">
+    
+    <title>Day 8.1</title>
+</head>
+<body>
+    <h1 >Tempreture</h1>
+    <div id="container"></div>
+        <label for="num">Enter Temp.</label>
+        <input type="number" id="num" placeholder="Enter Temp." /><br />
+
+        <select name="" id="choice">
+        <option value="">Select Option</option>
+        <option value="c">°C</option>
+        <option value="f">°F</option>
+        <option value="k">K</option>
+        </select> 
+    <!-- (temp°C × 9/5) + 32 = 82.4°F -->
+    <button id="calculate">Tempreture</button>
+    </div>
+    <p id="result"> </p>
+    
+</body>
+
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13.2 - GPA Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<h1 align="center">Gpa Calculator</h1>
+<body>
+<div id="selector">
+    <select id="">
+        <option>Select No. Subject</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+</div>
+
+<button id="calculate">Calculate</button>
+<p id="result"></p>
+
+<script>
+    $(document).ready(function(){
+        $("#selector").select(function(){
+            var no_subject = $("#selector").val();
+            if (no_subject == "1") {
+                $("#result").append("<input value=English>")
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <body>
+    <div id="sub" style="margin-left: 20%;">
+    <p>SUBJECTS</p>
+    <label for="sub1">SUBJECTS</label><br>
+    <input id="sub1" type="text" value="Cloud Computing" style="text-align: center;"><br>
+    <label for="sub2">SUBJECTS</label><br>
+    <input id="sub2" type="text" value="IOT" style="text-align: center;"><br>
+    <label for="sub3">SUBJECTS</label><br>
+    <input id="sub3" type="text" value="Design Thinking" style="text-align: center;"><br>
+    <label for="sub4">SUBJECTS</label><br>
+    <input id="sub4" type="text" value="Computer Networks" style="text-align: center;"><br>
+    <label for="sub1">SUBJECTS</label><br>
+    <input id="sub5" type="text" value="AI" style="text-align: center;"><br>
+</div>
+
+<div id="credit" style="margin-left: 40%; margin-top: -16%;">
+    <p>CREDITS</p>
+    <label for="Credit1">CREDITS</label><br>
+    <input id="Credit1" type="text" value="4"style="text-align: center;"><br>
+    <label for="Credit2">CREDITS</label><br>
+    <input id="Credit2" type="text" value="3"style="text-align: center;"><br>
+    <label for="Credit3">CREDITS</label><br>
+    <input id="Credit3" type="text" value="3"style="text-align: center;"><br>
+    <label for="Credit4">CREDITS</label><br>
+    <input id="Credit4" type="text" value="4" style="text-align: center;"><br>
+    <label for="Credit5">CREDITS</label><br>
+    <input id="Credit5" type="text" value="3" style="text-align: center;"><br>
+</div>
+
+<div id="credit" style="margin-left: 60%; margin-top: -16%;">
+    <p>GRADE POINTS</p>
+    <label for="Grade1">GRADE POINTS</label><br>
+    <input id="Grade1" type="text" value="9" style="text-align: center;"><br>
+    <label for="Grade2">GRADE POINTS</label><br>
+    <input id="Grade2" type="text" value="8" style="text-align: center;"><br>
+    <label for="Grade3">GRADE POINTS</label><br>
+    <input id="Grade3" type="text" value="9" style="text-align: center;"><br>
+    <label for="Grade4">GRADE POINTS</label><br>
+    <input id="Grade4" type="text" value="8" style="text-align: center;"><br>
+    <label for="Grade5">GRADE POINTS</label><br>
+    <input id="Grade5" type="text" value="9" style="text-align: center;"><br>
+</div>
+
+<div align="center"><button id="calculate">calculate GPA</button> </div>
+
+<p align="center"id="result"></p>
+
+<script>
+    $(document).ready(function(){
+        $("#calculate").click(function(){
+            var Credit1= parseFloat($("#Credit1").val());
+            var Credit2= parseFloat($("#Credit2").val());
+            var Credit3= parseFloat($("#Credit3").val());
+            var Credit4= parseFloat($("#Credit4").val());
+            var Credit5= parseFloat($("#Credit5").val());
+            var Grade1= parseFloat($("#Grade1").val());
+            var Grade2= parseFloat($("#Grade2").val());
+            var Grade3= parseFloat($("#Grade3").val());
+            var Grade4= parseFloat($("#Grade4").val());
+            var Grade5= parseFloat($("#Grade5").val());
+
+            var calculate = (Credit1 * Grade1) + (Credit2 * Grade2) + (Credit3 * Grade3)+ (Credit4 * Grade4)+ (Credit5 * Grade5); 
+ 
+ var GPA = calculate / (Grade1 + Grade2 + Grade3 + Grade4 + Grade5); 
+ $("#result").text("Your GPA is " + GPA.toFixed(2) + " Out of 4"); // Fixed to display GPA with 2 decimal places
+        });
+    });
+</>
+
+</body> -->

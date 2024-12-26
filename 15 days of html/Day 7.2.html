@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Day 7.3 Dice Roller</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e17676;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 90%;
+      margin-top: -1.5%;
+      color: gold;
+    }
+
+    .container {
+      background-color: #da8888;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    #dice1 {
+      padding-right: -50%;
+      padding-bottom: 5px;
+      margin-bottom: 1%;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 100%;
+      background-color: #ddc8c8;
+    }
+    #dice2 {
+      margin-bottom: 1%;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 100%;
+      background-color: #ddc8c8;
+    }
+    #dice3 {
+      margin-bottom: 1%;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 100%;
+      background-color: #ddc8c8;
+    }
+    #calculate {
+      /* position: fixed; */
+      font-weight: bold;
+      margin-top: 10px;
+      background-color: #3498db;
+      color: #000000;
+      border: none;
+      padding: 10px;
+      margin-left: 10%;
+      border-radius: 5px;
+    }
+
+    #crore {
+      margin-top: 2%;
+      padding-left: 10px;
+    }
+    #next {
+      padding-left: 10px;
+    }
+  </style>
+
+  <h1 align="center">Laxmi <del>Cheet</del> Fund</h1>
+  <h4 align="center">Try Your luck and win Up to 7 Crore</h4>
+
+  <body>
+    <div class="container">
+      <label for="dice1">Dice 1</label>
+      <input type="number" id="dice1" placeholder="Enter Number 1-6" /><br />
+
+      <label for="dice2">Dice 2</label>
+      <input type="number" id="dice2" placeholder="Enter Number 1-6" /><br />
+
+      <label for="dice3">Dice 3</label>
+      <input type="number" id="dice3" placeholder="Enter Number 1-6" /><br />
+
+      <div>
+        <button id="calculate">Check Your Luck</button>
+      </div>
+    </div>
+      <img id="crore" src="/7crore.gif" style="display: none" />
+      <img id="next" src="/kalaana.gif" style="display: none" />
+      <p id="result"></p>
+
+    
+  </body>
+
+  <script>
+    $(document).ready(function () {
+      $("#calculate").dblclick(function () {
+        // Get the values of the three input fields
+        var dice1 = parseInt($("#dice1").val());
+        var dice2 = parseInt($("#dice2").val());
+        var dice3 = parseInt($("#dice3").val());
+
+        // Calculate the total
+        var total = dice1 + dice2 + dice3;
+
+        // Check if the total is equal to 16
+        if (total == 9) {
+          $("#result").text("7 crore!");
+          $("#crore").show();
+        } else {
+          $("#result").text("Itna galat kaise !");
+          $("#next").show();
+        }
+        
+      });
+    });
+  </script>
+</html>

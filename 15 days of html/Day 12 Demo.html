@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 12 Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Food</h1>
+
+    <div id="container">
+        <div id="pizza">
+            <h4> Pizza- Rs 200</h4>
+            <button id="pizzaBtn">Add to Cart</button>
+        </div>
+
+        <div id="tea">
+            <!-- <img src="./tea.jpg"> -->
+            <h4>Tea -Rs 10</h4>
+            <button id="teaBtn">Add to Cart</button>
+
+        </div>
+
+        <div id="burger">
+            <!-- <img src="./burger.jpg"> -->
+            <h4>Burger- Rs 90</h4>
+            <button id="burgerBtn">Add to Cart</button>
+
+        </div>
+
+        <div id="coffee">
+            <!-- <img src="./coffee.jpg"> -->
+            <h4>Coffee- Rs 60</h4>
+            <button id="coffeeBtn">Add to Cart</button>
+
+        </div>
+    </div>
+    <hr>
+    <button id="submit">Confirm  And Pay </button>
+    <hr>
+
+    <p id="result"></p>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <hr>
+    <p id="result4"></p>
+
+    <script>
+        $(document).ready(function () {
+            // cOUNT
+            var countPizza = 0;
+            var countTea = 0;
+            var countCoffee = 0;
+            var countBurger = 0;
+            // RATES
+            var ratePizza = 200;
+            var rateBurger = 90;
+            var rateTea = 10;
+            var rateCoffee = 60;
+
+
+            $("#pizzaBtn").click(function () {
+                countPizza++;
+                $("#result").text("Pizza Added = " + countPizza + "   ||   Amount = " + ratePizza * countPizza);
+            });
+
+            $("#teaBtn").click(function () {
+                countTea++;
+                $("#result1").text("Tea Added = " + countTea + "   ||   Amount = " + rateTea * countTea);
+            });
+
+            $("#burgerBtn").click(function () {
+                // 90
+                countBurger++;
+                $("#result2").text("Burger Added = " + countBurger + "   ||   Amount = " + rateBurger * countBurger);
+            });
+
+            $("#coffeeBtn").click(function () {
+                // Rs60
+                countCoffee++;
+                $("#result3").text("Coffee Added = " + countCoffee + "   ||   Amount = " + rateCoffee * countCoffee);
+            });
+
+            // FINAL function to sum-up
+            $("#submit").click(function () {
+                // Here Print items and Total amount
+                var totalAmount = (ratePizza * countPizza) + (rateBurger * countBurger) + (rateTea * countTea) + (rateCoffee * countCoffee);
+                $("#result4").text(" Total Amount = " + totalAmount);
+            });
+
+        });
+    </script> 
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14 </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<h1 >Cash Conve</h1>
+<body>
+    <diV  id="money"></diV>
+
+    
+    <select id="choice">
+        <option>Select Currency</option>
+        <option value="rupee" align="center">₹</option>
+        <option align="center">$</option>
+        <option align="center">€</option>
+    </select>
+
+
+        <lable>Enter Amount</lable>
+        <input type="number" id="cash">
+    
+    
+        <p>Convert to</p>
+
+    <select id="choice1">
+        <option>Select Currency</option>
+        <option align="center">₹</option>
+        <option value="dollor" align="center">$</option>
+        <option value="euro" align="center">€</option>
+    </select>
+</diV>
+<button id="Convert">CONVERT</button>
+<p id="result"></p>
+
+<script>
+    $(document).ready(function(){
+        $("#Convert").click(function(){
+            var choice = $("#choice").val();
+            var choice1= $("#choice1").val();
+            var input = parseFloat($("#cash").val());
+
+            if( choice == "rupee"){
+                if(choice1 == "euro")  {
+                    var result = (input * 0.011);
+                    $("#result").text("The Converted Currency is"  + result);
+                }
+                if(choice1 == "dollor")  {
+                    var result = (input * 0.012);
+                    $("#result").text("The Converted Currency is"  + result);
+                }
+            } 
+             
+        });
+    });
+
+
+
+</script>
+   
+</body>
+</html>

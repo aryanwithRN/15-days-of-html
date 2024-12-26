@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="animate">to right</button><br>
+    <button id="animate1">to Left</button><br>
+    <button id="animate2">to top</button><br>
+    <button id="animate3">to bottom</button><br>
+    <div id="a4" 
+    style="background:yellow;height:100px;width:100px;position:absolute;">
+    </div>
+    
+</body>
+<script>
+    $(document).ready(function(){
+          $("#animate").click(function(){
+            $("#a4").animate({ right: '300px' }, "slow");
+          });
+          
+          $("#animate1").click(function(){
+            $("#a4").animate({ left: '300px' }, "slow");
+          });
+        });
+        $("#animate2").click(function(){
+            $("#a4").animate({ top: '100px' }, "slow");
+          });
+        
+        $("#animate3").click(function(){
+            $("#a4").animate({ bottom: '300px' }, "slow");
+          });
+      
+     
+
+</script>
+</html>
+
+<!-- <body>
+
+    <p>BATCH</p>
+    <button id="fade">SLIDE DOWN</button><br><br>
+    <p id="res"> </p>
+    <br>
+    <br>
+    <div align="center" id="a2" style="background:green;height:100px;width:100px;text-align:justify ;position:absolute;">
+    </div>
+    <br> <br>
+    <div id="a3" style="background:red;height:100px;width:100px;position:absolute;">
+    </div>
+    <br> <br>
+    <div id="a4" style="background:yellow;height:100px;width:100px;position:absolute;">
+    </div> -->
+
+
+    

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 16.1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Bajaj Scammer</h1>
+<lable for="amount">Enter your Loan Amount</lable>
+<input type="text" id="amount" value="50000"><br><br>
+
+<lable for="intrest">Intrest R. in %</lable>
+<input type="text" id="intrest" value="8"><br><br>
+
+<lable for="year">Loan year </lable>
+<input type="text" id="year" value="4"><br><br>
+
+<button id="calculate"> calculate</button>
+
+<p id="result"></p>
+<p id="result1"></p>
+
+
+<script>
+    $(document).ready(function(){
+        $("#calculate").click(function(){
+            var amount= parseFloat($("#amount").val());
+            var intrest= parseFloat($("#intrest").val());
+            var year= parseFloat($("#year").val());
+            
+            var sum = (amount * intrest) / (1-(1 + intrest) ** (-year));
+
+            $("#result1").text(sum);
+
+            for (var i=0; i <= year; i++){
+                $("#result").append(sum.toFixed(2)+ ' terms - '+ i + '<br>')
+            } 
+      
+        });
+    });
+</script>
+    
+</body>
+</html>

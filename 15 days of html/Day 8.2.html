@@ -1,0 +1,56 @@
+<!-- 
+create a webpage which takes input cost price and selling price of a product predict if there is a profit accrocng or loss 
+if it proftable then print profit %
+if there is loss then print loss % 
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Profit loss Converter</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="./styles.css">
+</head>
+
+<body align="center">
+
+<h1>Profit Loss Calculator</h1>
+
+<label>Cost Price</label>
+<input type="number"  id="costprice" placeholder="cost price">
+<br>
+<label>Selling Price</label>
+<input type="number" id="sellprice" placeholder="selling price">
+<br>
+<button id="calculate">Calculate</button>
+ 
+
+<p id="result"></p>
+<p id="result2"></p>
+
+<script>
+
+$(document).ready(function () {
+$("#calculate").on({
+click: function () {
+var cp = parseInt($("#costprice").val());
+var sp = parseInt($("#sellprice").val());
+
+if ( cp < sp) {
+var percentage = (((sp-cp)/cp) * 100);
+$("#result").text(percentage+" % Profit");
+var discount = (sp-cp) * 0.95;
+$("#result2").text(" 5% Discounted from profit value = "+discount);
+
+} else {
+var percentage = (-1 *((sp-cp)/cp) * 100);
+$("#result").text(percentage+" % Loss");
+var newsp = sp + 100;
+$("#result2").text(newsp+" (+100 into loss amount if its loss)");
+}
+}
+});
+});
+</script>
+</body>
+</html>

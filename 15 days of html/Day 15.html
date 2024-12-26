@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>GPA Calculator</h1>
+    <select id="choice">
+        <option value="0">Select option</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select><br><br>
+
+    <div id="result"></div>
+    <button style="display:none" id="submit">Calculate GPA</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#choice").change(function () {
+                var choice = $(this).val();
+                var $result = $("#result");
+                $result.empty(); // Clear previous content
+
+                for (var i = 1; i <= choice; i++) {
+                    $result.append('<input id="GPA' + i + '" type="number" placeholder="Credit Value">');
+                    $result.append('<input id="H' + i + '" type="number" placeholder="Hours">');
+                    $result.append('<br>');
+                }
+
+                $("#submit").show();
+            });
+
+            $("#submit").click(function () {
+                var choice = parseInt($("#choice").val());
+                var totalGpa = 0;
+                var totalHours = 0;
+
+                for (var i = 1; i <= choice; i++) {
+                    var gpa = parseFloat($("#GPA" + i).val()) || 0;
+                    var hours = parseFloat($("#H" + i).val()) || 0;
+
+                    totalGpa += gpa * hours;
+                    totalHours += hours;
+                }
+
+                if (totalHours > 0) {
+                    var GPA = (totalGpa / totalHours).toFixed(2);
+                    $result.text("Your GPA is " + GPA + " out of 4");
+                } else {
+                    $result.text("Please enter valid credit values and hours.");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

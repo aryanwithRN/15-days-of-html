@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Area of shapes</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+       body{
+        background-color: aqua;
+       }
+       #choice{
+        background-color: cornflowerblue;
+        margin-top: 25px;
+        font-size: 110%;
+       }
+       #circle{
+        margin-top: 1%;
+        padding-left: 2%;
+       }
+       #calculateCircle{
+        margin-top: 1%;
+        border-radius: 5px;
+       }
+       #Square{
+        margin-top: 1%;
+        padding-left: 2%;
+       }
+       #calculateSquare{
+        margin-top: 1%;
+        border-radius: 5px;
+       }
+       #Triangle{
+        margin-top: 1%;
+        padding-left: 2%;
+       }
+       #calculateTriangle,
+       height{
+        margin-top: 1%;
+        border-radius: 5px;
+       }
+      
+    </style>
+
+</head>
+
+<body align="center">
+
+    <h1>Calculate Area Of Shape</h1>
+    <hr>
+
+    <select id="choice">
+        <option value="Default">Select Shape</option>
+        <option value="circle">Circle</option>
+        <option value="Square">Square</option>
+        <option value="Triangle">Triangle</option>
+    </select>
+
+    <div id="circle" style="display: none;">
+        Radius: <input type="text" id="radius"><br>
+        <button id="calculateCircle">Calculate Circle Radius</button><br>
+    </div>
+
+    <div id="Square" style="display: none;">
+        Side: <input type="text" id="side"><br>
+        <button id="calculateSquare">Calculate Square Area</button><br>
+    </div>
+
+    <div id="Triangle" style="display: none;">
+        Base: <input type="text" id="base"><br>
+        Height: <input type="text" id="height"><br>
+        <button id="calculateTriangle">Calculate Triangle Area</button><br>
+    </div>
+
+
+    <br>
+    <p id="result"></p>
+
+    <script>
+        $(document).ready(function () {
+            $("#choice").click(function () {
+
+                if ($("#choice").val() == "circle") {
+                    $("#circle").show();
+
+                    $("#calculateCircle").click(function () {
+                        var radius = parseFloat($("#radius").val());
+                        var area = 3.14 * (radius * radius);
+                        $("#result").text("Area of Circle is " + area);
+                    })
+                }
+
+                if ($("#choice").val() == "Square") {
+                    $("#Square").show();
+
+                    $("#calculateSquare").click(function () {
+                        var side = parseFloat($("#side").val());
+                        var area = (side * side);
+                        $("#result").text("Area of Square is " + area);
+                    })
+                }
+
+
+                if ($("#choice").val() == "Triangle") {
+                    $("#Triangle").show();
+
+                    $("#calculateTriangle").click(function () {
+                        var base = parseFloat($("#base").val());
+                        var height = parseFloat($("#height").val());
+                        var area = (1 / 2) * base * height;
+                        $("#result").text("Area of Triangle is " + area);
+                    })
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

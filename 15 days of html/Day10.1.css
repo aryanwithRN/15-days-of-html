@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(208, 207, 207);
+}
+
+#container{
+    margin-top: 50px;
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+#radius{
+    margin-bottom: 5px;
+}

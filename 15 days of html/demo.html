@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Shape</title>
+</head>   
+<body align="center">
+
+        <h1> Area Of Shape's</h1>
+        <hr>
+    
+        <select id="choice">
+            <option value="Default">Select Shape</option>
+            <option value="circle">Circle</option>
+            <option value="Square">Square</option>
+            <option value="Triangle">Triangle</option>
+        </select>
+    
+        <div id="circle" >
+            Radius: <input type="text" id="radius"><br>
+            <button id="calculateCircle">Calculate Circle Radius</button><br>
+        </div>
+    
+        <div id="Square" >
+            Side: <input type="text" id="side"><br>
+            <button id="calculateSquare">Calculate Square Area</button><br>
+        </div>
+    
+        <div id="Triangle">
+            Base: <input type="text" id="base"><br>
+            Height: <input type="text" id="height"><br>
+            <button id="calculateTriangle">Calculate Triangle Area</button><br>
+        </div>
+
+        <br>
+    <p id="result"></p>
+
+    <script>
+        $(document).ready(function(){
+           $("#choice").change(function() {
+               if($("#choice").val()== "circle"){
+                   $('#circle').show();
+   
+                   $("#calculateCircle").click(function(){
+                       var radius = parseFloat($("#radius").val());
+                       var area = 3.14 * (radius * radius);
+                       $("result").text("Area of circle is " + area);
+                   })
+               }
+   
+               if($("#choice").val()== "Square"){
+                   $('#Square').show();
+   
+                   $("#calculateSquare").click(function(){
+                       var radius = parseFloat($("#side").val());
+                       var area =side * side;
+                       $("result").text("Area of square is " + area);
+                   })
+               }
+   
+               if($("#choice").val()== "Triangle"){
+                   $('#Triange').show();
+   
+                   $("#calculateTriangle").click(function(){
+                       var radius = parseFloat($("#height").val());
+                       var area = 1/2 * base * height;
+                       $("result").text("Area of Triangle is " + area);
+                   })
+               }
+   
+            });
+        });
+    </script>
+</body>
+</html>
+

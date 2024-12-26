@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Day 11.1 Salary Calculator</title>
+</head>
+<style>
+h1{
+    text-align: center;
+}
+
+body{
+    
+    background-color: rgb(255, 170, 255);
+}
+input{
+    background-color: rgb(255, 214, 245);
+}
+#id{
+    width: 25%;
+}
+#name{
+   
+    margin-top: 5px;
+    width: 40%;
+}
+#role{
+    width: 20%;
+    margin-top: 5px;
+}
+#ta{
+    margin-top: 5px;
+    width: 25%;
+}
+#da{
+    margin-top: 5px;
+    width: 25%;
+}
+#hra{
+    margin-top: 5px;
+    width: 25%;
+}
+#basic{
+    margin-top: 5px;
+    width: 25%;
+}
+#join{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#container{
+    background-color: #d9acf3;
+      padding: 70px;
+      border-radius: 5px;
+      max-width: 300px;
+      margin: 0 auto;
+}
+button{
+    margin-left: 35%;
+    background-color: rgb(245, 184, 255);
+    margin-top: 10px;
+}
+p{
+    text-align: center;
+}
+</style>
+<body>
+
+    <h1>Insider Info</h1>
+<div id="container">
+    <label> Employee ID :</label>
+    <input id="id" value="23238922" type="number"><br>
+
+    <label> Name :</label>
+    <input value="Aryan Mahadure" id="name" type="text"><br>
+
+    <label> Role :</label>
+    <input value="SDE 1" id="role" type="text"><br>
+
+    <label> Ta :</label>
+    <input id="ta" value="6000" type="number"><br>
+
+    <label> Da :</label>
+    <input  id="da" value="5000" type="number"><br>
+
+    <label> Hra :</label>
+    <input id="hra" value="6000" type="number"><br>
+
+    <label> Basic :</label>
+    <input  id="basic" value="49000" type="number"><br>
+
+    <label> Date Of Joining </label>
+    <input value="2022-12-25" id="join" type="date"><br>
+
+    <label> Date Of Leaving</label>
+    <input value="2023-12-25" id="leave" type="date"><br>
+
+    <button id="submit">Submit</button>
+</div>
+    
+<div class="Output">
+    <p id="result"></p>
+</div>
+    <script>
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                var ID = parseFloat($("#id").val());
+                var Name = $("#name").val();
+                var Role = $("#role").val();
+                var Ta = parseFloat($("#ta").val());
+                var Da = parseFloat($("#da").val());
+                var Hra = parseFloat($("#hra").val());
+                var Basic = parseFloat($("#basic").val());
+                var Joining = $("#join").val();
+                var Leaving = $("#leave").val();
+                
+
+
+                var salary = Ta + Da + Hra + Basic;
+               // var gap = Leaving-Joining ;//
+                var startDay = new Date(Leaving);  
+                var endDay = new Date(Joining);
+                var millisBetween = startDay.getTime() - endDay.getTime(); 
+                var days = millisBetween / (1000 * 3600 * 24);     
+                $("#result").html('Employee ID : '+ID + '<br>' +'Name : '+ Name + '<br>' + 'Role : '+ Role + '<br>' + 'Salary : '+ salary + '<br>' +'Days in Company " ' + days + '<br>');
+                
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 11.1 Salary Calculator </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<h1>Insider Info</h1>
+<body>
+    <form>
+    <label for="Emp"> EMP ID</label><br>
+    <input  id="Emp" placeholder="EMP ID" type="number"><br>
+    <label for="name">NAME</label><br>
+    <input id="name" placeholder="EMP NAME" type="text"><br>
+    <select id="choice">
+        <option>Select Role</option>
+        <option> SDE 1</option>
+        <option> AWS </option>
+    </select><br>
+    
+    <label for="Salary"> Basic Salary</label><br>
+    <input id="TA" placeholder="TA" type="number">
+    <input id="DA" placeholder="DA" type="number">
+    <input id="Hra" placeholder="Hra" type="number">
+    <input id="Basic" placeholder="Basic" type="number"><br>
+
+    <label for="Date">Date of Joining</label>
+    <input id="Date" type="date"><br>
+
+    <label for="Date1">Date of Leaving</label>
+    <input id="Date1" type="date"><br>
+    <button id="calculate">calculate</button>
+    <p id="result"></p>
+</form>
+</body>
+<script>
+$(document).ready(function(){
+    $("#calculate").click(function(){
+        var emp = $("#Emp").val();
+        var name = $("#name").val();
+        var role = $("#chice").val();
+        var basic_salary = parseInt($("#Salary").val());
+        var Ta = parseInt($("#TA"));
+        var Da = parseInt($("#DA"));
+        var Hra = parseInt($("#Hra"));
+        var Basic = parseInt($("#Basic"));
+        var date_of_joining = ($("#Date").val());
+        var date_of_Leaving = ($("#Date1").val());
+        if (role == "SDE 1") {
+            var salary = basic_salary + 500;
+            var salary = Ta + Da + Hra + Basic;
+            $("#result").text("Salary for SDE 1 is"+ salary);
+            } else if (role == "AWS"){
+                var salary = basic_salary+2000;
+        }
+
+    
+            
+        
+
+    });
+});
+</script>
+
+</html> -->
+
+
+

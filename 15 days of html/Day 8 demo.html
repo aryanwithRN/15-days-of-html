@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Temp Converter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body align="center">
+
+    <h1>Temperature Converter</h1>
+
+    <input type="number" value="" id="temp" placeholder="Enter Temperature">
+    <select id="type">
+        <option value="C">Celcius</option>
+        <option value="K">Kelvin</option>
+        <option value="F">Faherneit</option>
+    </select>
+    
+    <button id="calculate">Convert</button>
+    
+    <p id="result"></p>
+    <!-- <p id="result2"></p> -->
+
+    <script>
+
+        $(document).ready(function () {
+            $("#calculate").on({
+                click: function () {
+                    var temp = parseInt($("#temp").val());
+                    var ch=$("#type").val();
+                    
+                    if (ch== "C") {
+                        var temp_F = (temp *(9/5) + 32);
+                        var temp_K = (temp + 273.15);
+
+                        $("#result").text(temp_F);
+                        // $("#result2").text(temp_K);
+
+                    }
+                     else if (ch=="K") {
+                        var temp_F = (temp *(9/5) + 32);
+                        var temp_C = (temp - 273.15);
+
+                        $("#result").text(temp_F);
+                        $("#result2").text(temp_C);
+
+                    }
+                    else if (ch == "F") {
+                        var temp = (temp + 273.15);
+                        var temp = (temp - 273.15);
+
+                        $("#result").text(temp_K);
+                        $("#result2").text(temp_C);
+
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

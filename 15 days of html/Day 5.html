@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Day 5 </title>
+  </head>
+  <h1>Day 5 Calculator</h1>
+  <hr />
+  <body align="center">
+    <h2>Add Two Numbers</h2>
+
+    <label for="num1">Enter Number 1:</label>
+    <input type="number" id="num1" /><br />
+
+    <label for="num2">Enter Number 2:</label>
+    <input type="number" id="num2" /><br />
+    <select name="" id="choice">
+      <option value="Defult">Operation</option>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+
+    <button id="calculate">Calculate</button>
+
+    <p id="result">Result:</p>
+
+    <script>
+      $(document).ready(function () {
+        // Event handler for the Calculate Sum button click
+        $("#calculate").click(function () {
+          // Get the values entered by the user
+          var num1 = parseFloat($("#num1").val());
+          var num2 = parseFloat($("#num2").val());
+
+          // Check if both inputs are valid numbers
+          if ($("#choice").val() == "+") {
+            // Calculate the sum
+            var res = num1 + num2;
+
+            // Display the result
+            $("#result").text("Result: " + res);
+          } else if ($("#choice").val() == "-") {
+            var res = num2 - num1;
+            $("#result").text("Result:" + res);
+          }
+
+          if ($("#choice").val() == "*") {
+            // Calculate the sum
+            var res = num1 * num2;
+
+            // Display the result
+            $("#result").text("Result: " + res);
+          } else if ($("#choice").val() == "/") {
+            var res = num2 / num1;
+            $("#result").text("Result:" + res);
+          } else {
+            // Display an error message if inputs are not valid numbers
+            $("#result").text("Please enter valid numbers.");
+          }
+        });
+      });
+    </script>
+    <a href="/Day 5.1.html">Day5.1</a>
+    <a href="/Day-5.2.html">Day5.</a>
+  </body>
+</html>

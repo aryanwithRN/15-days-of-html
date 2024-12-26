@@ -1,0 +1,87 @@
+<!-- Build a Calculator to
+take dropdown of shape (square, rectangle, circle)
+input 2 box of length and width and calculate the cost of fitting tiles
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="``stylesheet" href="/Day10.1.css" />
+    <title>Day 10.1</title>
+  </head>
+  <h1 align="center">Tichkule Construction</h1>
+  <body>
+    <div id="container">
+      <select id="choice">
+        <option value="Default">Select Shape</option>
+        <option value="circle">Circle</option>
+        <option value="Square">Square</option>
+        <option value="Rectangle">Rectangle</option>
+      </select>
+
+      <div id="elements">
+        <div id="circle">
+          Radius: <input type="number" id="radius" /><br />
+          <button id="calculateCircle">Cost of tiles</button><br />
+        </div>
+
+        <div id="Square">
+          Side: <input type="number" id="side" /><br />
+          <button id="calculateSquare">Cost of tiles</button><br />
+        </div>
+
+        <div id="Rectangle">
+          width: <input type="text" id="width" /><br />
+          Height: <input type="text" id="height" /><br />
+          <button id="calculateRectangle">Cost of tiles</button><br />
+        </div>
+      </div>
+    </div>
+
+    <p id="result"></p>
+
+    <script>
+      $(document).ready(function () {
+        $("#circle").hide();
+        $("#Square").hide();
+        $("#Rectangle").hide();
+
+        $("#choice").click(function () {
+          if ($("#choice").val() == "circle") {
+            $("#circle").show();
+
+            $("#calculateCircle").click(function () {
+              var radius = parseFloat($("#radius").val());
+              var area = 3.14 * (radius * radius) * 50;
+              $("#result").text("Total costing of tiles work in inr  " + area);
+            });
+          }
+
+          if ($("#choice").val() == "Square") {
+            $("#Square").show();
+
+            $("#calculateSquare").click(function () {
+              var side = parseFloat($("#side").val());
+              var area = side * side * 45;
+              $("#result").text("Total costing of tiles work in inr " + area);
+            });
+          }
+
+          if ($("#choice").val() == "Rectangle") {
+            $("#Rectangle").show();
+
+            $("#calculateRectangle").click(function () {
+              var width = parseFloat($("#width").val());
+              var height = parseFloat($("#height").val());
+              var area = height * width * 47;
+              $("#result").text("Total costing of tiles work in inr" + area);
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

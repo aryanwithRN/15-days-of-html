@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Day 6</title>
+  </head>
+<style>
+  label{
+    margin-left: 30%;
+  }
+  #calculate{
+    margin-left: 45%;
+    border-radius: 5px;
+  }
+  #result{
+      margin-left: 45%;
+  }
+</style>
+
+
+  <h1 align="center">Print Table</h1>
+  <hr>
+
+    <label>Enter Number</label>
+    <input type="number" id="N" placeholder="Numbers"  /><br>
+    <br>
+
+    <button id="calculate">Print Table</button><br><br><br>
+    <hr>
+
+    <div id="result"> </div>
+  </body>
+  
+  <script>
+    $(document).ready(function () {
+        $("#calculate").click(function () {
+            var number = parseFloat($("#N").val());
+
+            for (var i = 1; i <= 10; i++) {
+                var cal = number * i;
+                $("#result").append("<table border><tr><td>" + cal + "</td></tr></table>");
+            }
+        });
+    });
+</script>
+</html>
+
+

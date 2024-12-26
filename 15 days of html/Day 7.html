@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Two Numbers</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Events</h1>
+
+    <button id="calculate">Mouse Events</button>
+    <button id="key">Key Events</button>
+    <a href="/Day 7.1.html">Day 7.1</a>
+    <a href="/Day 7.2.html">Day 7.2</a>
+    
+
+    <script>
+        $(document).ready(function () {
+
+            // Event handler for mouse
+            $("#calculate").on({
+                click: function () {
+                    alert("CLicked");
+                },
+
+                oncontextmenu : function () {
+                    alert("Double clicked");
+                },
+                
+                mouseleave : function(){
+                    alert("Leaved");
+                },
+
+                mouseenter:function(){
+                alert("Mai aagaya")
+                 }
+            // Event handler for Keypress
+            });
+            
+    
+               
+        });
+        
+    </script>
+
+</body>
+
+</html>

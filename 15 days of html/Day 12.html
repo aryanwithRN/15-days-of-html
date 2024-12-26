@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 12 </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+
+</head>
+<h1 align="center">Hotel </h1>
+<body>
+    <p align="center" id="menu">
+        <mark>Pizza - 99 Tea-10 Coffee-25 Burger - 85</mark>
+    </p>
+    <p align="center">Select Numbers of Item You want to order!</p>
+    <div align="center" class="forBtn">
+    <button  id="for1">For 1</button>
+    <button  id="for2">For 2</button>
+    <button  id="for3">For 3</button>
+    <button  id="for4">For 4</button></div>
+    <br>
+ <div align="center" class="container">
+  <div id="1" style="display: none;">
+    <label for="item1">Item</label>
+    <input id="item1" value="Pizza" placeholder="Enter Menu item">
+    <button id="calculate1">Check Total</button>
+  </div>
+
+  <div id="2" style="display: none;" >
+    <label for="item2">Item</label>
+    <input id="item2" value="Tea" placeholder="Enter Menu item">
+    
+  </div>
+    
+  <div id="3" style="display: none;" >
+    <label for="item3">Item</label>
+    <input id="item3" value="Burger" placeholder="Enter Menu item">
+   
+  </div>
+
+  <div id="4" style="display: none;" >
+    <label for="item4">Item</label>
+    <input id="item4" value="Coffee" placeholder="Enter Menu item">
+    
+  </div></div>
+ 
+  <P align="center" id="result"></P>
+
+
+<script>
+$(document).ready(function(){
+    $("#calculate").click(function(){});
+    var Pizza = parseInt($("#Pizza").val());
+    var Tea = parseInt($("#Tea").val());
+    var Coffee = parseInt($("#Coffee").val());
+    var Burger = parseInt($("#Burger").val());
+    var Pizza = 99 ;
+
+    $("#for1").click(function(){
+        $("#1").show();
+        $("#calculate1").click(function() {
+
+            $("#result").text("Pizza 99 = 99 only");
+        })
+        
+    });
+    $("#for2").click(function(){
+        $('#1').show();
+        $('#2').show();
+        $("#calculate1").click(function() {
+        
+        $("#result").text("Pizza 99 + Tea 10 = 109 only" );
+})
+    });
+    $("#for3").click(function(){
+        $('#1').show();
+        $('#2').show();
+        $('#3').show();
+        $("#calculate1").click(function() {
+        
+        $("#result").text("Pizza 99 + Tea 10 + Coffee 25 = 134 only" );
+    });
+    $("#for4").click(function(){
+        $('#1').show();
+        $('#2').show();
+        $('#3').show();
+        $('#4').show();
+        $("#calculate1").click(function() {
+        
+        $("#result").text("Pizza 99 + Tea 10 + Coffee 25 + Burger 85 = 219 only" );
+    });
+});
+    });
+});
+</script>
+   
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 16</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <style>
+    body{
+        text-align: center;
+        background-color: rgb(196, 228, 255);
+    }
+
+    h1{
+        text-align: center;
+    }
+    #amount{
+        text-align: center;
+        border-radius: 40px;
+    }
+    #years{
+        text-align: center;
+        border-radius: 40px;
+    }
+
+    #sr{
+        text-align: center;
+        border-radius: 40px;
+    }
+
+    #cs{
+        text-align: center;
+        border-radius: 40px;
+    }
+
+    #calculate{
+        border-radius: 40px;
+    }
+
+  </style>
+  <body>
+    <h1>Goal Achiever</h1>
+
+    <label for="amount">Enter Goal amount</label><br />
+    <input
+      id="amount"
+      placeholder="Enter Goal Amount"
+      type="number"
+      value="400000"
+    /><br /><br />
+
+    <label for="years">No. of years to Achieve</label><br />
+    <input
+      id="years"
+      placeholder="Enter Goal Amount"
+      type="number"
+      value="4"
+    /><br /><br />
+
+    <label for="cs">Current saving</label><br />
+    <input
+      id="cs"
+      placeholder="Enter Goal Amount"
+      type="number"
+      value="100000"
+    /><br /><br />
+
+    <label for="sr">Saving per Years</label><br />
+    <input
+      id="sr"
+      placeholder="Enter Goal Amount"
+      type="number"
+      value="100000"
+    /><br /><br />
+
+    <button id="calculate">calculate Goal</button>
+
+    <p id="result"></p>
+
+    <script>
+      $(document).ready(function () {
+        $("#calculate").click(function () {
+          var goal = parseInt($("#amount").val());
+          var no_years = parseInt($("#years").val());
+          var current_savings = parseInt($("#cs").val());
+          var savings_rate = parseInt($("#sr").val());
+
+          var sum = goal - current_savings;
+          var total = sum / no_years;
+
+          // $("#result").text("result" + total);
+
+          if (total <= savings_rate) {
+            $("#result").text("Possible to Achieve");
+          } 
+          else {
+            var Aurpaisa = sum / no_years;
+            $("#result").text(" Not achieved yet, Needed more " + Aurpaisa + "/year" );
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
